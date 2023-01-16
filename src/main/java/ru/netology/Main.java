@@ -9,7 +9,8 @@ public class Main {
                 .surname("Иванов")
                 .address("Москва").build();
         System.out.println(person);
-        Person smallPerson = person.newChildBuilder()
+        Person smallPerson = person
+                .newChildBuilder()
                 .name("МиниИван")
                 .build();
         System.out.println(smallPerson);

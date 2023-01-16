@@ -64,12 +64,14 @@ public class Person {
                 ", address='" + address + '\'' +
                 '}';
     }
+
     public PersonBuilder newChildBuilder() {
         return new PersonBuilder()
                 .address(this.address)
                 .surname(this.surname)
                 .age(0);
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
