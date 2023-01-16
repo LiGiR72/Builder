@@ -6,17 +6,17 @@ public class PersonBuilder {
     private Integer age;
     private String address;
 
-    public PersonBuilder Name(String name) {
+    public PersonBuilder name(String name) {
         this.name = name;
         return this;
     }
 
-    public PersonBuilder Surname(String surname) {
+    public PersonBuilder surname(String surname) {
         this.surname = surname;
         return this;
     }
 
-    public PersonBuilder Age(Integer age) {
+    public PersonBuilder age(Integer age) {
         if (age < 0) {
             throw new IllegalArgumentException("Неверный возраст!!");
         }
@@ -24,23 +24,15 @@ public class PersonBuilder {
         return this;
     }
 
-    public PersonBuilder Address(String address) {
+    public PersonBuilder address(String address) {
         this.address = address;
         return this;
     }
 
-    public PersonBuilder newChildBuilder() {
-        return new PersonBuilder()
-                .Address(this.address)
-                .Surname(this.surname)
-                .Age(0);
-    }
-
-
     public Person build() {
         if ((name == null) || (surname == null)) {
             String message = "Не хватает аргументнов: " + ((name == null) ? " Имя " : "") + "|" + ((surname == null) ? " Фамилия " : "");
-            throw new IllegalArgumentException(message);
+            throw new IllegalStateException(message);
         }
         return new Person(name, surname, age, address);
     }
