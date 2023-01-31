@@ -21,6 +21,10 @@ public class Main {
                 .surname("Ивановна")
                 .build();
         person1.happyBirthday();
+        System.out.println(person1);
+        System.out.println(person1.getAge());
+        System.out.println(person.getAge());
+        System.out.println();
         person1.getAddress();
         try {
             Person person2 = new PersonBuilder().build();

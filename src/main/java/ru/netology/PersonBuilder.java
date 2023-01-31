@@ -3,7 +3,7 @@ package ru.netology;
 public class PersonBuilder {
     private String name;
     private String surname;
-    private Integer age;
+    private int age = -1;
     private String address;
 
     public PersonBuilder name(String name) {
@@ -16,7 +16,7 @@ public class PersonBuilder {
         return this;
     }
 
-    public PersonBuilder age(Integer age) {
+    public PersonBuilder age(int age) {
         if (age < 0) {
             throw new IllegalArgumentException("Неверный возраст!!");
         }
